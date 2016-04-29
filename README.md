@@ -4,11 +4,14 @@
 ## install
 1. clone repository
 2. run 'npm install'
+
         npm install
 
 ## build
 1. Development Build
+
         gulp
 2. Production Build
+
         gulp clean
         npm run-script build
