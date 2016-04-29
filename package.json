@@ -1,0 +1,41 @@
+{
+  "name": "iori",
+  "version": "0.0.0",
+  "description": "happy birthday!",
+  "private": true,
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "react": "^15.0.1",
+    "react-addons-css-transition-group": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "webfontloader": "^1.6.24"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "envify": "^3.4.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-less": "^3.0.5",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-uglify": "^1.5.3",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "reactify": "^1.1.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production gulp build"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        "envify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  }
+}
