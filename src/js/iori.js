@@ -16,18 +16,7 @@ var IoriComponent = React.createClass({
     render: function() {
         return (
             <div>
-                <BackGround/>
                 <Container/>
-            </div>
-        )
-    }
-});
-
-var BackGround = React.createClass({
-    render: function() {
-        return (
-            <div id="bg">
-                <img src="./dist/img/background.jpg" alt="iori"/>
             </div>
         )
     }
