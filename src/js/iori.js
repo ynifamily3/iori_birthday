@@ -70,7 +70,7 @@ var HentaiList = React.createClass({
             size: (Math.floor(Math.random() * 5) + 2) + "em",
             color: color[Math.floor(Math.random() * color.length)]
         });
-        if (newData.length > 500) {
+        if (newData.length > 1000) {
             newData.shift();
         }
         this.setState({data: newData, count: this.state.count + 1});
