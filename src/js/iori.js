@@ -3,11 +3,10 @@
 /// <reference path="../../typings/react/react-dom.d.ts" />
 "use strict";
 
-var $ = require('jquery')
-var React = require('react');
-var ReactDom = require('react-dom');
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
-var WebFont = require('webfontloader');
+var React = require("react");
+var ReactDom = require("react-dom");
+var ReactCSSTransitionGroup = require("react-addons-css-transition-group");
+var WebFont = require("webfontloader");
 
 var hentai = ["変態", "へんたい", "Hentai", "헨타이", "변태"];
 var color = ["#e22b30", "#2743d2", "#d3dde9", "#f39939", "#01a860", "#9238be", "#fd99e1", "#515558", "#ffe43f", "#ffe43f", "#b4e04b", "#01adb9", "#a6126a"];
@@ -27,8 +26,10 @@ var Container = React.createClass({
       return {ready:false};  
     },
     handleClick: function(event) {
-        event.preventDefault()
+        event.preventDefault();
         this.setState({ready: true});
+        document.getElementById("hentaiPlayer").play();
+        document.getElementById("hentaiPlayer").classList.remove("hidden");
     },
     render: function() {
         var InteractiveArea = this.state.ready ? <HentaiList/> : <a href="#" className="btn" onClick={this.handleClick}>READY!!</a>;
@@ -38,10 +39,21 @@ var Container = React.createClass({
                 <p className="large">IORI MINASE</p>
                 <p className="large">HAPPY BIRTHDAY</p>
                 <h1 className="title">미나세 이오리의 생일을 축하합니다.</h1>
+                <AudioPlayer />
                 {InteractiveArea}
             </div>
         )
     }
+})
+
+var AudioPlayer = React.createClass({
+    render: function() {
+       return (
+         <audio controls id="hentaiPlayer" className="hidden" loop preload="auto">
+            <source src="./dist/mp3/bgm.mp3" type="audio/mpeg"/>
+         </audio>   
+       )
+   } 
 })
 
 var HentaiList = React.createClass({
@@ -78,7 +90,6 @@ var HentaiList = React.createClass({
         })
         return (
             <div>
-                <AudioPlayer />
                 <div id="hentaiContainer">
                     <ReactCSSTransitionGroup transitionName="hentai" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
                         {HentaiNode}
@@ -92,30 +103,20 @@ var HentaiList = React.createClass({
 var Hentai = React.createClass({
     render: function() {
         return (
-            <span className="do-hentai" style={{left: this.props.left, top: this.props.top, fontSize: this.props.size, color: this.props.color}}>{this.props.str}</span>
+            <span className="kono-hentai" style={{left: this.props.left, top: this.props.top, fontSize: this.props.size, color: this.props.color}}>{this.props.str}</span>
         )
     }
 })
 
-var AudioPlayer = React.createClass({
-    render: function() {
-       return (
-         <audio controls autoPlay className="hentai" loop>
-            <source src="./dist/mp3/bgm.mp3" type="audio/mpeg"/>
-         </audio>   
-       )
-   } 
-})
-
-$('body').ready(function() {
-    WebFont.load({
+document.addEventListener("DOMContentLoaded", function(event) { 
+  WebFont.load({
         google: {
-            families: ['Lato:300, 400']
+            families: ["Lato:300, 400"]
         }
     });
     console.log("하아? 어딜 보는거야! 벼...변태! 진성 변태! 변태 어른!");
     ReactDom.render(
         <IoriComponent/>, 
-        document.getElementById('IORI_MINASE')
+        document.getElementById("IORI_MINASE")
     );
-})
+});

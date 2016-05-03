@@ -61,7 +61,7 @@ a.btn {
     }
 }
 
-audio.hentai {
+audio#hentaiPlayer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -69,7 +69,7 @@ audio.hentai {
     z-index: 3;
 }
 
-.do-hentai {
+.kono-hentai {
     position: fixed;
     opacity: 0.5;
 }
@@ -85,24 +85,28 @@ div#hentaiContainer {
     z-index: 2;
 }
 
-.do-hentai.hentai-enter {
+.kono-hentai.hentai-enter {
     opacity: 0;
     filter: blur(20px);
     transition: opacity 0.3s, filter 0.3s;
 }
 
-.do-hentai.hentai-enter.hentai-enter-active {
+.kono-hentai.hentai-enter.hentai-enter-active {
     opacity: 0.5;
     filter: none;
 }
 
-.do-hentai.hentai-leave {
+.kono-hentai.hentai-leave {
     opacity: 0.5;
     filter: none;
     transition: opacity 0.3s, filter 0.3s;
 }
 
-.do-hentai.hentai-leave.hentai-leave-active {
+.kono-hentai.hentai-leave.hentai-leave-active {
     opacity: 0;
     filter: blur(20px);
+}
+
+.hidden {
+    display: none;
 }
