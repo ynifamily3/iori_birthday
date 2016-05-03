@@ -22,11 +22,11 @@
 ### 원본 영상
 http://www.nicovideo.jp/watch/sm21303202
 
-### @MIJELU
+### [@mijelu9](https://twitter.com/mijelu9)
 * 야요이오리 P
 * 배경사진의 이오리 피규어 주인
 * 도메인 주인
 
-### @niceb5y
+### [@niceb5y](https://twitter.com/niceb5y)
 * 이거 만든 사람
 * 배경사진의 이오리 피규어 찍은 사람
