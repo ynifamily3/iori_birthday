@@ -15,7 +15,7 @@ var IoriComponent = React.createClass({
     render: function() {
         return (
             <div>
-                <Container/>
+                <Container />
             </div>
         )
     }
@@ -32,7 +32,7 @@ var Container = React.createClass({
         document.getElementById("hentaiPlayer").classList.remove("hidden");
     },
     render: function() {
-        var InteractiveArea = this.state.ready ? <HentaiList/> : <a href="#" className="btn" onClick={this.handleClick}>READY!!</a>;
+        var InteractiveArea = this.state.ready ? <HentaiList /> : <a href="#" className="btn" onClick={this.handleClick}>READY!!</a>;
         return (
             <div id="container">
                 <p className="large">2016 May 05</p>
@@ -41,20 +41,23 @@ var Container = React.createClass({
                 <h1 className="title">미나세 이오리의 생일을 축하합니다.</h1>
                 <AudioPlayer />
                 {InteractiveArea}
+                <p className="credit">
+                    by <a href="https://twitter.com/mijelu9" className="mijelu9">@mijelu9</a>, <a href="https://twitter.com/niceb5y" className="niceb5y">@niceb5y</a>
+                </p>
             </div>
         )
     }
-})
+});
 
 var AudioPlayer = React.createClass({
     render: function() {
        return (
          <audio controls id="hentaiPlayer" className="hidden" loop preload="auto">
-            <source src="./dist/mp3/bgm.mp3" type="audio/mpeg"/>
+            <source src="./dist/mp3/bgm.mp3" type="audio/mpeg" />
          </audio>   
        )
    } 
-})
+});
 
 var HentaiList = React.createClass({
     updateNode: function() {
@@ -106,7 +109,7 @@ var Hentai = React.createClass({
             <span className="kono-hentai" style={{left: this.props.left, top: this.props.top, fontSize: this.props.size, color: this.props.color}}>{this.props.str}</span>
         )
     }
-})
+});
 
 document.addEventListener("DOMContentLoaded", function(event) { 
   WebFont.load({
@@ -116,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     console.log("하아? 어딜 보는거야! 벼...변태! 진성 변태! 변태 어른!");
     ReactDom.render(
-        <IoriComponent/>, 
+        <IoriComponent />, 
         document.getElementById("IORI_MINASE")
     );
 });
