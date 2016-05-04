@@ -1,6 +1,8 @@
 # Iori Birthday
 미나세 이오리 생일축하 페이지
 
+http://iori.yryr.moe/
+
 ## 설치
 1. clone repository
 2. 실행 'npm install'
@@ -8,11 +10,15 @@
         npm install
 
 ## 빌드
-1. 개발 빌드
+1. 설치
+
+        npm -g install gulp
+
+2. 개발 빌드
 
         gulp
 
-2. 프로덕션 빌드
+3. 프로덕션 빌드
 
         gulp clean
         npm run-script build
