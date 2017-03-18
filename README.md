@@ -1,7 +1,7 @@
 # Iori Birthday
 미나세 이오리 생일축하 페이지
 
-[![Idol Iori](https://img.shields.io/badge/Idol-Iori-fd99e1.svg?maxAge=2592000?style=flat)](http://iori.yryr.moe)
+[![Idol Iori](https://img.shields.io/badge/Idol-Iori-f19ec2.svg?maxAge=2592000?style=flat)](http://iori.yryr.moe)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/MIJELU/iori_birthday/gh-pages/LICENSE)
 
 http://iori.yryr.moe/
